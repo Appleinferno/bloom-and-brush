@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Brush | Magical Face Painting by Tiffany Dinehart</title>
+    <meta name="description"
+        content="Bloom & Brush offers professional face painting for birthdays, corporate events, and festivals in North Georgia, Western NC, and Eastern TN. Book the fun today!">
+
+    <!-- Fonts -->
+    <link href="assets/fonts.css" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#E91E63', // Pink
+                            50: '#FCE4EC',
+                            100: '#F8BBD0',
+                            500: '#E91E63',
+                            600: '#D81B60',
+                            900: '#880E4F',
+                        },
+                        secondary: {
+                            DEFAULT: '#8BC34A', // Green
+                            50: '#F1F8E9',
+                            100: '#DCEDC8',
+                            500: '#8BC34A',
+                            600: '#7CB342',
+                            900: '#33691E',
+                        },
+                        accent: {
+                            yellow: '#FFCA28',
+                            blue: '#42A5F5',
+                            purple: '#AB47BC',
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations & Utilities */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float 3s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+
+        .animate-wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #E91E63, #FFCA28, #42A5F5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* blob background */
+        .blob {
+            position: absolute;
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-accent-yellow selection:text-slate-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 top-0" id="navbar">
+        <div class="glass border-b border-white/40 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                        <img src="images/bloom%20and%20brush%20face%20painting%20by%20Tiiffany%20Dinehart%20Logo.png"
+                            alt="Bloom & Brush Logo"
+                            class="h-12 w-auto group-hover:scale-105 transition-transform duration-300">
+                        <span
+                            class="font-display font-bold text-2xl tracking-tight text-slate-800 group-hover:text-primary-600 transition-colors hidden sm:block">
+                            Bloom<span class="text-accent-yellow">&</span>Brush
+                        </span>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#" class="font-medium text-slate-600 hover:text-primary-600 transition-colors">Home</a>
+                        <a href="#services"
+                            class="font-medium text-slate-600 hover:text-primary-600 transition-colors">Services</a>
+                        <a href="#gallery"
+                            class="font-medium text-slate-600 hover:text-primary-600 transition-colors">Gallery</a>
+                        <a href="#about"
+                            class="font-medium text-slate-600 hover:text-primary-600 transition-colors">About</a>
+                        <a href="#hero"
+                            class="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold shadow-lg shadow-primary-500/30 hover:-translate-y-0.5 transition-all duration-300">
+                            Book Now
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn"
+                            class="text-slate-600 hover:text-primary-600 focus:outline-none p-2 transition-transform active:scale-95">
+                            <span class="material-symbols-rounded text-3xl">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 absolute w-full left-0 shadow-xl transition-all duration-300 origin-top">
+                <div class="px-4 pt-2 pb-6 space-y-2">
+                    <a href="#"
+                        class="block px-3 py-3 rounded-xl text-base font-bold text-slate-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Home</a>
+                    <a href="#services"
+                        class="block px-3 py-3 rounded-xl text-base font-bold text-slate-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Services</a>
+                    <a href="#gallery"
+                        class="block px-3 py-3 rounded-xl text-base font-bold text-slate-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Gallery</a>
+                    <a href="#about"
+                        class="block px-3 py-3 rounded-xl text-base font-bold text-slate-700 hover:text-primary-600 hover:bg-primary-50 transition-all">About</a>
+                    <a href="#hero"
+                        class="block px-3 py-3 mt-4 text-center rounded-xl text-base font-bold bg-primary-600 text-white shadow-lg shadow-primary-500/30">Book
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-[90vh] flex items-center">
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/girl%20with%20a%20tiger%20face%20paint%20design%20by%20tiffany%20dinehart%20in%20a%20grassy%20park%20at%20sunset%20golden%20hour.webp"
+                alt="Tiger Face Paint Design" class="w-full h-full object-cover">
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/30 md:to-transparent backdrop-blur-[2px] md:backdrop-blur-0">
+            </div>
+        </div>
+
+        <!-- Floating Blobs (Background) -->
+        <div
+            class="absolute top-20 left-0 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob">
+        </div>
+        <div
+            class="absolute top-20 right-0 w-72 h-72 bg-accent-yellow rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute -bottom-8 left-20 w-72 h-72 bg-secondary-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <!-- Text Content -->
+                <div class="flex-1 text-center lg:text-left max-w-2xl">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-200 text-primary-700 font-bold text-sm mb-6 shadow-sm animate-bounce">
+                        <span class="material-symbols-rounded text-base">verified</span>
+                        <span>North Georgia's Favorite Face Painting</span>
+                    </div>
+
+                    <h1
+                        class="font-display font-extrabold text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6 leading-[1.1]">
+                        Making Memories <br>
+                        <span class="text-gradient">Magical</span> & Colorful
+                    </h1>
+
+                    <p class="text-lg md:text-2xl text-slate-700 mb-8 font-medium leading-relaxed drop-shadow-sm">
+                        Professional face painting that turns parties into unforgettable adventures. Based in North
+                        Georgia, we travel to festivals, park events, and birthdays across the Tri-State area! ✨
+                    </p>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8 opacity-90">
+                        <div
+                            class="flex items-center gap-2 text-slate-700 font-bold bg-white/50 px-3 py-1 rounded-full backdrop-blur-sm">
+                            <span class="material-symbols-rounded text-secondary-500">check_circle</span>
+                            FDA Compliant
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-slate-700 font-bold bg-white/50 px-3 py-1 rounded-full backdrop-blur-sm">
+                            <span class="material-symbols-rounded text-secondary-500">check_circle</span>
+                            Insured
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-slate-700 font-bold bg-white/50 px-3 py-1 rounded-full backdrop-blur-sm">
+                            <span class="material-symbols-rounded text-secondary-500">check_circle</span>
+                            5-Star Rated
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form (Right Column) -->
+                <div class="flex-1 w-full max-w-md lg:max-w-lg">
+                    <div
+                        class="bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-2xl border border-white/50 relative overflow-hidden group hover:bg-white/90 transition-all duration-300">
+                        <!-- Decorative Header -->
+                        <div
+                            class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-400 via-accent-yellow to-accent-blue">
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="font-display font-bold text-2xl text-slate-800">Get a Quote</h3>
+                            <p class="text-slate-500 text-sm">Fill out the form below to check availability!</p>
+                        </div>
+
+                        <form class="space-y-4">
+                            <!-- Name -->
+                            <div>
+                                <label for="name" class="block text-sm font-bold text-slate-700 mb-1">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Mom, Dad, or Event Planner"
+                                    class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:border-primary-500 focus:ring-primary-500 transition-all placeholder:text-slate-400 text-slate-700"
+                                    required>
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-sm font-bold text-slate-700 mb-1">Email
+                                    Address</label>
+                                <input type="email" id="email" name="email" placeholder="hello@example.com"
+                                    class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:border-primary-500 focus:ring-primary-500 transition-all placeholder:text-slate-400 text-slate-700"
+                                    required>
+                            </div>
+
+                            <!-- Event Type -->
+                            <div>
+                                <label for="event-type" class="block text-sm font-bold text-slate-700 mb-1">Event
+                                    Type</label>
+                                <select id="event-type" name="event-type"
+                                    class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:border-primary-500 focus:ring-primary-500 transition-all text-slate-700">
+                                    <option value="" disabled selected>Select an event type...</option>
+                                    <option value="birthday">Birthday Party</option>
+                                    <option value="local">Local Event / Market</option>
+                                    <option value="festival">Festival</option>
+                                    <option value="corporate">Corporate / Business</option>
+                                    <option value="prenatal">Prenatal / Belly Painting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Guest Count (Radio) -->
+                            <div>
+                                <span class="block text-sm font-bold text-slate-700 mb-2">How Many Faces?</span>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="guests" value="5-15" class="peer sr-only" required>
+                                        <div
+                                            class="px-2 py-2 text-center rounded-lg border border-slate-200 bg-white/50 text-sm font-medium text-slate-600 peer-checked:bg-primary-100 peer-checked:text-primary-700 peer-checked:border-primary-300 transition-all hover:bg-slate-50">
+                                            5-15
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="guests" value="15-25" class="peer sr-only">
+                                        <div
+                                            class="px-2 py-2 text-center rounded-lg border border-slate-200 bg-white/50 text-sm font-medium text-slate-600 peer-checked:bg-primary-100 peer-checked:text-primary-700 peer-checked:border-primary-300 transition-all hover:bg-slate-50">
+                                            15-25
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="guests" value="30+" class="peer sr-only">
+                                        <div
+                                            class="px-2 py-2 text-center rounded-lg border border-slate-200 bg-white/50 text-sm font-medium text-slate-600 peer-checked:bg-primary-100 peer-checked:text-primary-700 peer-checked:border-primary-300 transition-all hover:bg-slate-50">
+                                            30+
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block text-sm font-bold text-slate-700 mb-1">Anything
+                                    else?</label>
+                                <textarea id="message" name="message" rows="2"
+                                    placeholder="Date, theme, or special requests..."
+                                    class="w-full px-4 py-3 rounded-xl border-slate-200 bg-white/50 focus:border-primary-500 focus:ring-primary-500 transition-all placeholder:text-slate-400 text-slate-700"></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit"
+                                class="w-full py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-bold text-lg shadow-lg shadow-primary-500/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-[1.02]">
+                                Request Booking
+                                <span class="material-symbols-rounded">send</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Divider (Bottom) -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-20">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[60px] md:h-[100px] fill-white">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-50 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-secondary-600 font-display font-bold tracking-wider uppercase mb-2 block">Our
+                    Services</span>
+                <h2 class="font-display font-bold text-4xl md:text-5xl text-slate-800 mb-6">Choose Your Adventure</h2>
+                <p class="text-lg text-slate-600">Every event is unique! Explore our packages tailored for different
+                    magical occasions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: Birthday Parties -->
+                <a href="/services/birthdays.html"
+                    class="group relative bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-100 overflow-hidden">
+                    <div class="aspect-square overflow-hidden rounded-t-[2rem] relative group">
+                        <div
+                            class="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors z-10">
+                        </div>
+                        <img src="images/a%20young%20boy%20with%20a%20full%20rainbow%20tiger%20face%20paint%20design%20at%20a%20birthday%20party.jpg"
+                            alt="Birthday Party Face Painting"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-rounded text-4xl">celebration</span>
+                        </div>
+                        <h3
+                            class="font-display font-bold text-2xl text-slate-800 mb-3 group-hover:text-primary-600 transition-colors">
+                            Birthday Parties</h3>
+                        <p class="text-slate-600 mb-6 text-sm leading-relaxed">Make your child's special day sparkle
+                            with our most popular package.</p>
+                        <span class="inline-flex items-center gap-1 text-primary-600 font-bold text-sm tracking-wide">
+                            Learn More <span
+                                class="material-symbols-rounded text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Service 2: Corporate Events -->
+                <a href="/services/corporate.html"
+                    class="group relative bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-100 overflow-hidden">
+                    <div class="aspect-square overflow-hidden rounded-t-[2rem] relative group">
+                        <div
+                            class="absolute inset-0 bg-secondary-900/10 group-hover:bg-transparent transition-colors z-10">
+                        </div>
+                        <img src="images/Bloom%20and%20Brush%20Mobile%20Face%20Painting%20Station%20-%20This%20shows%20how%20Tiffany%20will%20arrive%20at%20events%20-%20she%20will%20bring%20a%20tent,%20a%20few%20tables,%20a%20high%20chair,%20and%20decorations%20to%20match%20the%20theme.jpg"
+                            alt="Local Event Setup"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-secondary-100 text-secondary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-rounded text-4xl">storefront</span>
+                        </div>
+                        <h3
+                            class="font-display font-bold text-2xl text-slate-800 mb-3 group-hover:text-secondary-600 transition-colors">
+                            Local Events</h3>
+                        <p class="text-slate-600 mb-6 text-sm leading-relaxed">Engage families and attract crowds at
+                            your next local gathering.</p>
+                        <span class="inline-flex items-center gap-1 text-secondary-600 font-bold text-sm tracking-wide">
+                            Learn More <span
+                                class="material-symbols-rounded text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Service 3: Belly Painting -->
+                <a href="/services/prenatal.html"
+                    class="group relative bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-100 overflow-hidden">
+                    <div class="aspect-square overflow-hidden rounded-t-[2rem] relative group">
+                        <div
+                            class="absolute inset-0 bg-accent-purple/10 group-hover:bg-transparent transition-colors z-10">
+                        </div>
+                        <img src="images/a%20beautifully%20painted%20goldfish%20to%20demonstrate%20Tiffany%20Dinehart%20talent%20with%20her%20face%20painting%20skills.jpg"
+                            alt="Artistic Face Painting"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-accent-purple/10 text-accent-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-rounded text-4xl">face</span>
+                        </div>
+                        <h3
+                            class="font-display font-bold text-2xl text-slate-800 mb-3 group-hover:text-accent-purple transition-colors">
+                            Professional Face Painting</h3>
+                        <p class="text-slate-600 mb-6 text-sm leading-relaxed">Top-tier artistic designs for any special
+                            occasion or private booking.</p>
+                        <span class="inline-flex items-center gap-1 text-accent-purple font-bold text-sm tracking-wide">
+                            Learn More <span
+                                class="material-symbols-rounded text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Service 4: Festival Markets -->
+                <a href="/services/festivals.html"
+                    class="group relative bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-100 overflow-hidden">
+                    <div class="aspect-square overflow-hidden rounded-t-[2rem] relative group">
+                        <div
+                            class="absolute inset-0 bg-accent-blue/10 group-hover:bg-transparent transition-colors z-10">
+                        </div>
+                        <img src="images/This%20is%20a%20screenshot%20of%20the%20Blairsville%20Farmers%20Market%20Facebook%20page%20and%20how%20they%20were%20proud%20and%20happy%20to%20book%20Bloom%20and%20Brush%20for%20their%20event%20-%20This%20is%20social%20proof%20to%20show%20bloom%20and%20brush%20is%20professional%20and%20delivers%20quality%20results%20.jpg"
+                            alt="Festival Face Painting"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-accent-blue/10 text-accent-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-rounded text-4xl">festival</span>
+                        </div>
+                        <h3
+                            class="font-display font-bold text-2xl text-slate-800 mb-3 group-hover:text-accent-blue transition-colors">
+                            Festivals & Markets</h3>
+                        <p class="text-slate-600 mb-6 text-sm leading-relaxed">Add a splash of color to your community
+                            fair or farmers market.</p>
+                        <span class="inline-flex items-center gap-1 text-accent-blue font-bold text-sm tracking-wide">
+                            Learn More <span
+                                class="material-symbols-rounded text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative overflow-hidden">
+        <!-- Rainbow River Background Path -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+            <svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg" class="w-full h-full object-cover">
+                <path fill="#FF0080"
+                    d="M0,256L60,261.3C120,267,240,277,360,298.7C480,320,600,352,720,346.7C840,341,960,299,1080,266.7C1200,235,1320,213,1380,202.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                </path>
+                <path fill="#FF8C00"
+                    d="M0,320L60,325.3C120,331,240,341,360,362.7C480,384,600,416,720,410.7C840,405,960,363,1080,330.7C1200,299,1320,277,1380,266.7L1440,256L1440,384L1380,384C1320,384,1200,384,1080,384C960,384,840,384,720,384C600,384,480,384,360,384C240,384,120,384,60,384L0,384Z">
+                </path>
+                <path fill="#FFD700"
+                    d="M0,384L60,389.3C120,395,240,405,360,426.7C480,448,600,480,720,474.7C840,469,960,427,1080,394.7C1200,363,1320,341,1380,330.7L1440,320L1440,448L1380,448C1320,448,1200,448,1080,448C960,448,840,448,720,448C600,448,480,448,360,448C240,448,120,448,60,448L0,448Z">
+                </path>
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Side -->
+                <div class="relative order-2 lg:order-1">
+                    <div
+                        class="relative z-10 p-3 bg-white rounded-[2.5rem] shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <img src="images/bloom%20and%20brush%20alternative%20logo%20design.jpg" alt="Bloom & Brush"
+                            class="w-full h-auto rounded-[2rem] object-cover">
+                        <!-- Floating Cards -->
+                        <div
+                            class="absolute -bottom-6 -right-6 glass-card p-4 rounded-xl flex items-center gap-3 animate-float">
+                            <span class="material-symbols-rounded text-3xl text-primary-500">palette</span>
+                            <div>
+                                <span class="block font-bold text-slate-800 text-sm">Professional Face Painter</span>
+                                <span class="block text-xs text-slate-500">Since 2015</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="order-1 lg:order-2">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 font-bold text-sm mb-6">
+                        👋 Hi, I'm Tiffany!
+                    </span>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl text-slate-800 mb-6 leading-tigher">
+                        Welcome to the <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-accent-yellow to-secondary-500">Rainbow
+                            River!</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        I’m a wife and mother of three, born and raised right here in Blairsville, GA. My journey began
+                        with painting my own children, nieces, and nephews, and seeing the pure joy on their faces
+                        sparked a passion I had to share.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Today, I'm on a mission to bring that same joy to every event. From glittery fairies to
+                        courageous heroes, I combine artistic skill with a gentle, kid-friendly approach to make magical
+                        memories that last a lifetime!
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <div
+                            class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-slate-100">
+                            <span class="material-symbols-rounded text-accent-blue">child_care</span>
+                            <span class="font-bold text-slate-700 text-sm">Mother of 3</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-slate-100">
+                            <span class="material-symbols-rounded text-primary-500">home_pin</span>
+                            <span class="font-bold text-slate-700 text-sm">Blairsville Native</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-slate-100">
+                            <span class="material-symbols-rounded text-accent-yellow">auto_awesome</span>
+                            <span class="font-bold text-slate-700 text-sm">Glitter Queen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary-600 font-display font-bold tracking-wider uppercase mb-2 block">Our
+                    Gallery</span>
+                <h2 class="font-display font-bold text-4xl md:text-5xl text-slate-800 mb-6">Latest Masterpieces</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">From fierce tigers to sparkling princesses, see the
+                    smiles we've created.</p>
+            </div>
+
+            <!-- Bento Grid Gallery -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[200px]">
+                <!-- Large item -->
+                <div class="col-span-2 row-span-2 group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer">
+                    <img src="images/a%20little%20girl%20with%20a%20big%20happy%20grin%20with%20her%20rainbow%20tiger%20face%20paint%20design.jpg"
+                        alt="Tiger Face Paint"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold font-display text-xl">Wild Tigers</span>
+                    </div>
+                </div>
+                <!-- Standard items -->
+                <div class="col-span-1 row-span-1 group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer">
+                    <img src="images/a%20teenage%20girl%20with%20a%20Lilo%20and%20Stitch%20face%20paint%20design%20at%20a%20birthday%20party.jpg"
+                        alt="Stitch Face Paint"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-bold font-display text-sm">Character Fun</span>
+                    </div>
+                </div>
+                <div class="col-span-1 row-span-1 group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer">
+                    <img src="images/birthday-party-photo-of-a-young-girl-with-a-star-wars-grogu-facepaint-design.jpg"
+                        alt="Grogu Face Paint"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-bold font-display text-sm">Fan Favs</span>
+                    </div>
+                </div>
+                <!-- Wide item -->
+                <div class="col-span-2 row-span-1 group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer">
+                    <img src="images/little%20girl%20with%20a%20dog%20face%20paint%20design%20with%20a%20cute%20puppy%20tongue.jpg"
+                        alt="Puppy Face Paint"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 align-middle">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold font-display text-xl">Puppy Love</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="/gallery.html"
+                    class="inline-flex items-center gap-2 text-slate-900 font-bold hover:text-primary-600 transition-colors border-b-2 border-primary-500 pb-1">
+                    View Full Gallery <span class="material-symbols-rounded">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / CTA Section -->
+    <section class="py-24 relative overflow-hidden bg-primary-900">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <div class="max-w-4xl mx-auto">
+                <span class="material-symbols-rounded text-6xl text-accent-yellow mb-6 block animate-bounce">star</span>
+                <h2 class="font-display font-bold text-4xl md:text-6xl text-white mb-8">
+                    "The highlight of our daughter's birthday! <br /> Truly magical."
+                </h2>
+                <p class="text-primary-100 text-xl font-medium mb-12">- Sarah J., Blairsville Mom</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="#hero"
+                        class="px-10 py-5 bg-white text-primary-900 rounded-full font-bold text-xl shadow-xl hover:scale-105 hover:bg-slate-50 transition-all duration-300">
+                        Book Your Date Now
+                    </a>
+                </div>
+                <p class="text-primary-200 mt-6 text-sm">
+                    ⚠️ Weekends fill up fast! Book 4-6 weeks in advance.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-300 pt-20 pb-10 border-t border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-6 text-white">
+                        <img src="images/bloom%20and%20brush%20face%20painting%20by%20Tiiffany%20Dinehart%20Logo.png"
+                            alt="Bloom & Brush Logo" class="h-10 w-auto">
+                    </div>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        Bringing joy, color, and sparkle to North Georgia, Western NC, and Eastern TN. We create magical
+                        memories one face at a time.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors">
+                            <span class="material-symbols-rounded">photo_camera</span> <!-- IG Placeholder -->
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
+                            <span class="material-symbols-rounded">thumb_up</span> <!-- FB Placeholder -->
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-primary-400 transition-colors">About Tiffany</a></li>
+                        <li><a href="#services" class="hover:text-primary-400 transition-colors">Services & Packages</a>
+                        </li>
+                        <li><a href="#gallery" class="hover:text-primary-400 transition-colors">Photo Gallery</a></li>
+                        <li><a href="/faq.html" class="hover:text-primary-400 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/services/birthdays.html"
+                                class="hover:text-secondary-400 transition-colors">Birthday Parties</a></li>
+                        <li><a href="/services/corporate.html"
+                                class="hover:text-secondary-400 transition-colors">Corporate Events</a></li>
+                        <li><a href="/services/prenatal.html"
+                                class="hover:text-secondary-400 transition-colors">Prenatal Painting</a></li>
+                        <li><a href="/services/festivals.html"
+                                class="hover:text-secondary-400 transition-colors">Festivals</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-rounded text-primary-500 mt-1">call</span>
+                            <span>(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-rounded text-primary-500 mt-1">mail</span>
+                            <a href="mailto:hello@bloomandbrush.fun"
+                                class="hover:text-white transition-colors">hello@bloomandbrush.fun</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-rounded text-primary-500 mt-1">pin_drop</span>
+                            <span>North Georgia & Tri-State Area</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+                <p>&copy; 2024 Bloom & Brush Face Painting. All rights reserved.</p>
+                <div class="mt-2 space-x-4">
+                    <a href="/privacy.html" class="hover:text-slate-300">Privacy Policy</a>
+                    <a href="/terms.html" class="hover:text-slate-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            const icon = btn.querySelector('span');
+            if (menu.classList.contains('hidden')) {
+                icon.textContent = 'menu';
+            } else {
+                icon.textContent = 'close';
+            }
+        });
+
+        // Close menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                btn.querySelector('span').textContent = 'menu';
+            });
+        });
+    </script>
+</body>
+
+</html>
