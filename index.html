@@ -190,11 +190,15 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-[90vh] flex items-center">
-        <!-- Background Image & Overlay -->
+    <section id="hero"
+        class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-[90vh] flex flex-col justify-center">
+        <!-- Background Image & Overlay (Desktop Only for Image) -->
         <div class="absolute inset-0 z-0">
+            <!-- Hidden on mobile, shown on lg screens -->
             <img src="images/girl%20with%20a%20tiger%20face%20paint%20design%20by%20tiffany%20dinehart%20in%20a%20grassy%20park%20at%20sunset%20golden%20hour.webp"
-                alt="Tiger Face Paint Design" class="w-full h-full object-cover">
+                alt="Tiger Face Paint Design" class="hidden lg:block w-full h-full object-cover">
+
+            <!-- Gradient Overlay (Always visible to provide background color) -->
             <div
                 class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/30 md:to-transparent backdrop-blur-[2px] md:backdrop-blur-0">
             </div>
@@ -212,11 +216,20 @@
         </div>
 
         <div class="container mx-auto px-4 relative z-10">
+            <!-- Mobile-Only Badge (Top) -->
+            <div class="lg:hidden flex justify-center mb-8">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-200 text-primary-700 font-bold text-sm shadow-sm animate-bounce">
+                    <span class="material-symbols-rounded text-base">verified</span>
+                    <span>North Georgia's Favorite Face Painting</span>
+                </div>
+            </div>
+
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 <!-- Text Content -->
-                <div class="flex-1 text-center lg:text-left max-w-2xl">
+                <div class="flex-1 text-center lg:text-left max-w-2xl order-2 lg:order-1">
                     <div
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-200 text-primary-700 font-bold text-sm mb-6 shadow-sm animate-bounce">
+                        class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-200 text-primary-700 font-bold text-sm mb-6 shadow-sm animate-bounce">
                         <span class="material-symbols-rounded text-base">verified</span>
                         <span>North Georgia's Favorite Face Painting</span>
                     </div>
@@ -253,7 +266,7 @@
                 </div>
 
                 <!-- Contact Form (Right Column) -->
-                <div class="flex-1 w-full max-w-md lg:max-w-lg">
+                <div class="flex-1 w-full max-w-md lg:max-w-lg order-1 lg:order-2">
                     <div
                         class="bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-2xl border border-white/50 relative overflow-hidden group hover:bg-white/90 transition-all duration-300">
                         <!-- Decorative Header -->
@@ -357,6 +370,12 @@
                     d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
                 </path>
             </svg>
+        </div>
+
+        <!-- Mobile Only Image (Placed at bottom, below text) -->
+        <div class="w-full mt-12 lg:hidden relative z-10">
+            <img src="images/girl%20with%20a%20tiger%20face%20paint%20design%20by%20tiffany%20dinehart%20in%20a%20grassy%20park%20at%20sunset%20golden%20hour.webp"
+                alt="Tiger Face Paint Design" class="w-full h-64 object-cover rounded-2xl shadow-lg">
         </div>
     </section>
 
