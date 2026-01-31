@@ -605,9 +605,10 @@
             <!-- Bento Grid Gallery -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[200px]">
                 <!-- Large item -->
-                <div class="col-span-2 row-span-2 group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer">
+                <div
+                    class="col-span-2 row-span-2 group relative rounded-3xl overflow-hidden shadow-lg cursor-zoom-in gallery-item">
                     <img src="images/a%20little%20girl%20with%20a%20big%20happy%20grin%20with%20her%20rainbow%20tiger%20face%20paint%20design.jpg"
-                        alt="Tiger Face Paint"
+                        alt="Wild Tigers"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
@@ -615,18 +616,20 @@
                     </div>
                 </div>
                 <!-- Standard items -->
-                <div class="col-span-1 row-span-1 group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer">
+                <div
+                    class="col-span-1 row-span-1 group relative rounded-3xl overflow-hidden shadow-lg cursor-zoom-in gallery-item">
                     <img src="images/a%20teenage%20girl%20with%20a%20Lilo%20and%20Stitch%20face%20paint%20design%20at%20a%20birthday%20party.jpg"
-                        alt="Stitch Face Paint"
+                        alt="Character Fun"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                         <span class="text-white font-bold font-display text-sm">Character Fun</span>
                     </div>
                 </div>
-                <div class="col-span-1 row-span-1 group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer">
+                <div
+                    class="col-span-1 row-span-1 group relative rounded-3xl overflow-hidden shadow-lg cursor-zoom-in gallery-item">
                     <img src="images/birthday-party-photo-of-a-young-girl-with-a-star-wars-grogu-facepaint-design.jpg"
-                        alt="Grogu Face Paint"
+                        alt="Fan Favs"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -634,9 +637,10 @@
                     </div>
                 </div>
                 <!-- Wide item -->
-                <div class="col-span-2 row-span-1 group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer">
+                <div
+                    class="col-span-2 row-span-1 group relative rounded-3xl overflow-hidden shadow-lg cursor-zoom-in gallery-item">
                     <img src="images/little%20girl%20with%20a%20dog%20face%20paint%20design%20with%20a%20cute%20puppy%20tongue.jpg"
-                        alt="Puppy Face Paint"
+                        alt="Puppy Love"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 align-middle">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
@@ -767,6 +771,26 @@
         </div>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 z-[60] bg-black/95 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 backdrop-blur-sm"
+        onclick="closeLightbox()">
+        <!-- Close Button -->
+        <button
+            class="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-[70] p-2 hover:bg-white/10 rounded-full"
+            onclick="closeLightbox()">
+            <span class="material-symbols-rounded text-4xl">close</span>
+        </button>
+
+        <div class="relative max-w-7xl max-h-[90vh] w-full flex flex-col items-center justify-center p-2">
+            <img id="lightbox-img" src="" alt=""
+                class="max-h-[80vh] w-auto object-contain rounded-lg shadow-2xl animate-float"
+                onclick="event.stopPropagation()">
+            <p id="lightbox-caption"
+                class="text-white/90 font-display font-bold text-xl mt-6 text-center tracking-wide"></p>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script>
         // Mobile Menu Toggle
@@ -789,6 +813,51 @@
                 menu.classList.add('hidden');
                 btn.querySelector('span').textContent = 'menu';
             });
+        });
+
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        function openLightbox(src, alt) {
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            lightboxCaption.textContent = alt || 'Bloom & Brush Gallery';
+
+            lightbox.classList.remove('hidden');
+            // Small timeout to allow display:flex to apply before opacity transition
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+            }, 10);
+
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxImg.src = '';
+            }, 300);
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Add Click Parsers to Gallery Items
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const img = this.querySelector('img');
+                // Use the alt text from the image for the caption
+                const captionText = this.querySelector('span')?.textContent || img.alt;
+                openLightbox(img.src, captionText);
+            });
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
         });
     </script>
 </body>
