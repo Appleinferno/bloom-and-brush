@@ -166,7 +166,16 @@
                     <div class="md:hidden flex items-center">
                         <button id="mobile-menu-btn"
                             class="text-slate-600 hover:text-primary-600 focus:outline-none p-2 transition-transform active:scale-95">
-                            <span class="material-symbols-rounded text-3xl">menu</span>
+                            <svg id="icon-menu" class="text-3xl w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z" />
+                            </svg>
+                            <svg id="icon-close" class="hidden text-3xl w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -223,7 +232,6 @@
             <div class="lg:hidden flex justify-center mb-8">
                 <div
                     class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-200 text-primary-700 font-bold text-sm shadow-sm animate-bounce">
-                    <span class="material-symbols-rounded text-base">verified</span>
                     <span>North Georgia's Favorite Face Painting</span>
                 </div>
             </div>
@@ -233,7 +241,6 @@
                 <div class="flex-1 text-center lg:text-left max-w-2xl order-2 lg:order-1">
                     <div
                         class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary-200 text-primary-700 font-bold text-sm mb-6 shadow-sm animate-bounce">
-                        <span class="material-symbols-rounded text-base">verified</span>
                         <span>North Georgia's Favorite Face Painter</span>
                     </div>
 
@@ -252,17 +259,29 @@
                     <div class="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8 opacity-90">
                         <div
                             class="flex items-center gap-2 text-slate-700 font-bold bg-white/50 px-3 py-1 rounded-full backdrop-blur-sm">
-                            <span class="material-symbols-rounded text-secondary-500">check_circle</span>
+                            <svg class="text-secondary-500 w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="m424-408-86-86q-11-11-28-11t-28 11q-11 11-11 28t11 28l114 114q12 12 28 12t28-12l226-226q11-11 11-28t-11-28q-11-11-28-11t-28 11L424-408Zm56 328q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                            </svg>
                             FDA Compliant
                         </div>
                         <div
                             class="flex items-center gap-2 text-slate-700 font-bold bg-white/50 px-3 py-1 rounded-full backdrop-blur-sm">
-                            <span class="material-symbols-rounded text-secondary-500">check_circle</span>
+                            <svg class="text-secondary-500 w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="m424-408-86-86q-11-11-28-11t-28 11q-11 11-11 28t11 28l114 114q12 12 28 12t28-12l226-226q11-11 11-28t-11-28q-11-11-28-11t-28 11L424-408Zm56 328q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                            </svg>
                             Insured
                         </div>
                         <div
                             class="flex items-center gap-2 text-slate-700 font-bold bg-white/50 px-3 py-1 rounded-full backdrop-blur-sm">
-                            <span class="material-symbols-rounded text-secondary-500">check_circle</span>
+                            <svg class="text-secondary-500 w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="m424-408-86-86q-11-11-28-11t-28 11q-11 11-11 28t11 28l114 114q12 12 28 12t28-12l226-226q11-11 11-28t-11-28q-11-11-28-11t-28 11L424-408Zm56 328q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                            </svg>
                             5-Star Rated
                         </div>
                     </div>
@@ -357,7 +376,11 @@
                             <button type="submit"
                                 class="w-full py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-bold text-lg shadow-lg shadow-primary-500/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-[1.02]">
                                 Request Booking
-                                <span class="material-symbols-rounded">send</span>
+                                <svg class="w-[1em] h-[1em] fill-current inline-block"
+                                    xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                    <path
+                                        d="M792-443 176-183q-20 8-38-3.5T120-220v-520q0-22 18-33.5t38-3.5l616 260q25 11 25 37t-25 37ZM200-280l474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z" />
+                                </svg>
                             </button>
                         </form>
                     </div>
@@ -414,7 +437,11 @@
                     <div class="relative z-10">
                         <div
                             class="w-16 h-16 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-rounded text-4xl">celebration</span>
+                            <svg class="text-4xl w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="m212-212 282-100-182-182-100 282Zm709-467q-9 9-21 9t-21-9l-3-3q-14-14-35-14t-35 14L603-479q-9 9-21 9t-21-9q-9-9-9-21t9-21l203-203q32-32 77-32t77 32l3 3q9 9 9 21t-9 21ZM399-799q9-9 21-9t21 9l5 5q32 32 32 76t-32 76l-3 3q-9 9-21 9t-21-9q-9-9-9-21t9-21l3-3q14-14 14-34t-14-34l-5-5q-9-9-9-21t9-21Zm162-80q9-9 21-9t21 9l43 43q32 32 32 77t-32 77L523-559q-9 9-21 9t-21-9q-9-9-9-21t9-21l123-123q14-14 14-35t-14-35l-43-43q-9-9-9-21t9-21Zm320 480q-9 9-21 9t-21-9l-43-43q-14-14-35-14t-35 14l-43 43q-9 9-21 9t-21-9q-9-9-9-21t9-21l43-43q32-32 77-32t77 32l43 43q9 9 9 21t-9 21ZM212-212Zm-104 52 151-420q5-13 15.5-20t22.5-7q8 0 15 3t13 9l270 270q6 6 9 13t3 15q0 12-7 22.5T580-259L160-108q-12 5-23 1.5T118-118q-8-8-11.5-19t1.5-23Z" />
+                            </svg>
                         </div>
                         <h3
                             class="font-display font-bold text-2xl text-slate-800 mb-3 group-hover:text-primary-600 transition-colors">
@@ -440,7 +467,11 @@
                     <div class="relative z-10">
                         <div
                             class="w-16 h-16 bg-secondary-100 text-secondary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-rounded text-4xl">storefront</span>
+                            <svg class="text-4xl w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M201-120q-33 0-56.5-23.5T121-200v-318q-23-21-35.5-54t-.5-72l42-136q8-26 28.5-43t47.5-17h556q27 0 47 16.5t29 43.5l42 136q12 39-.5 71T841-518v318q0 33-23.5 56.5T761-120H201Zm368-440q27 0 41-18.5t11-41.5l-22-140h-78v148q0 21 14 36.5t34 15.5Zm-180 0q23 0 37.5-15.5T441-612v-148h-78l-22 140q-4 24 10.5 42t37.5 18Zm-178 0q18 0 31.5-13t16.5-33l22-154h-78l-40 134q-6 20 6.5 43t41.5 23Zm540 0q29 0 42-23t6-43l-42-134h-76l22 154q3 20 16.5 33t31.5 13ZM201-200h560v-282q-5 2-6.5 2H751q-27 0-47.5-9T663-518q-18 18-41 28t-49 10q-27 0-50.5-10T481-518q-17 18-39.5 28T393-480q-29 0-52.5-10T299-518q-21 21-41.5 29.5T211-480h-4.5q-2.5 0-5.5-2v282Zm560 0H201h560Z" />
+                            </svg>
                         </div>
                         <h3
                             class="font-display font-bold text-2xl text-slate-800 mb-3 group-hover:text-secondary-600 transition-colors">
@@ -466,7 +497,11 @@
                     <div class="relative z-10">
                         <div
                             class="w-16 h-16 bg-accent-purple/10 text-accent-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-rounded text-4xl">face</span>
+                            <svg class="text-4xl w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M324.5-404.5Q310-419 310-440t14.5-35.5Q339-490 360-490t35.5 14.5Q410-461 410-440t-14.5 35.5Q381-390 360-390t-35.5-14.5Zm240 0Q550-419 550-440t14.5-35.5Q579-490 600-490t35.5 14.5Q650-461 650-440t-14.5 35.5Q621-390 600-390t-35.5-14.5ZM480-160q134 0 227-93t93-227q0-24-3-46.5T786-570q-21 5-42 7.5t-44 2.5q-91 0-172-39T390-708q-32 78-91.5 135.5T160-486v6q0 134 93 227t227 93Zm0 80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-54-715q42 70 114 112.5T700-640q14 0 27-1.5t27-3.5q-42-70-114-112.5T480-800q-14 0-27 1.5t-27 3.5ZM177-581q51-29 89-75t57-103q-51 29-89 75t-57 103Zm249-214Zm-103 36Z" />
+                            </svg>
                         </div>
                         <h3
                             class="font-display font-bold text-2xl text-slate-800 mb-3 group-hover:text-accent-purple transition-colors">
@@ -492,7 +527,11 @@
                     <div class="relative z-10">
                         <div
                             class="w-16 h-16 bg-accent-blue/10 text-accent-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-rounded text-4xl">festival</span>
+                            <svg class="text-4xl w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M190-80q-40 0-64-32.5T110-186q11-51 15-102t5-102q-41-16-65.5-51T40-520v-28q0-23 13.5-42T89-618q95-38 179-94t162-122q11-9 23.5-13.5T480-852q14 0 26.5 4.5T530-834q78 66 162 122t179 94q22 9 35.5 28t13.5 42v28q0 44-24.5 79T830-390q1 51 5 102t15 102q8 41-16 73.5T770-80H190Zm46-520h488q-66-37-126.5-80T480-772q-57 49-117.5 92T236-600Zm344 140q25 0 42.5-17.5T640-520H520q0 25 17.5 42.5T580-460Zm-200 0q25 0 42.5-17.5T440-520H320q0 25 17.5 42.5T380-460Zm-200 0q25 0 42.5-17.5T240-520H120q0 25 17.5 42.5T180-460Zm6 300h107q9-60 14-119t8-119q-10-5-18.5-10.5T280-422q-14 14-32 24t-38 15q-2 57-7 112.5T186-160Zm188 0h212q-8-55-12.5-110T566-381q-25-2-47-12.5T480-421q-17 17-39 27.5T394-381q-3 56-7.5 111T374-160Zm293 0h107q-12-55-17-110.5T750-383q-20-5-38-14.5T680-422q-8 8-16.5 13.5T645-398q3 60 8.5 119T667-160Zm113-300q25 0 42.5-17.5T840-520H720q0 25 17.5 42.5T780-460Z" />
+                            </svg>
                         </div>
                         <h3
                             class="font-display font-bold text-2xl text-slate-800 mb-3 group-hover:text-accent-blue transition-colors">
@@ -533,7 +572,11 @@
                         <!-- Floating Cards -->
                         <div
                             class="absolute -bottom-6 -right-6 glass-card p-4 rounded-xl flex items-center gap-3 animate-float">
-                            <span class="material-symbols-rounded text-3xl text-primary-500">palette</span>
+                            <svg class="text-3xl text-primary-500 w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-177 23q17-17 17-43t-17-43q-17-17-43-17t-43 17q-17 17-17 43t17 43q17 17 43 17t43-17Zm120-160q17-17 17-43t-17-43q-17-17-43-17t-43 17q-17 17-17 43t17 43q17 17 43 17t43-17Zm200 0q17-17 17-43t-17-43q-17-17-43-17t-43 17q-17 17-17 43t17 43q17 17 43 17t43-17Zm120 160q17-17 17-43t-17-43q-17-17-43-17t-43 17q-17 17-17 43t17 43q17 17 43 17t43-17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z" />
+                            </svg>
                             <div>
                                 <span class="block font-bold text-slate-800 text-sm">Professional Face Painter</span>
                                 <span class="block text-xs text-slate-500">Since 2025</span>
@@ -568,17 +611,29 @@
                     <div class="flex flex-wrap gap-4">
                         <div
                             class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-slate-100">
-                            <span class="material-symbols-rounded text-accent-blue">child_care</span>
+                            <svg class="text-accent-blue w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M544.5-504.5Q530-519 530-540t14.5-35.5Q559-590 580-590t35.5 14.5Q630-561 630-540t-14.5 35.5Q601-490 580-490t-35.5-14.5Zm-200 0Q330-519 330-540t14.5-35.5Q359-590 380-590t35.5 14.5Q430-561 430-540t-14.5 35.5Q401-490 380-490t-35.5-14.5Zm27 191.5Q323-346 300-400h360q-23 54-71.5 87T480-280q-60 0-108.5-33Zm-32 164.5q-65.5-28.5-114-77t-77-114Q120-405 120-480t28.5-140.5q28.5-65.5 77-114t114-77Q405-840 480-840t140.5 28.5q65.5 28.5 114 77t77 114Q840-555 840-480t-28.5 140.5q-28.5 65.5-77 114t-114 77Q555-120 480-120t-140.5-28.5ZM678-282q82-82 82-198t-82-198q-82-82-198-82h-12q-6 0-12 2-6 6-8 13t-2 15q0 21 14.5 35.5T496-680q9 0 16.5-3t15.5-3q12 0 20 9t8 21q0 23-21.5 29.5T496-620q-45 0-77.5-32.5T386-730v-6q0-3 1-8-83 30-135 101t-52 163q0 116 82 198t198 82q116 0 198-82ZM480-480Z" />
+                            </svg>
                             <span class="font-bold text-slate-700 text-sm">Mother of 3</span>
                         </div>
                         <div
                             class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-slate-100">
-                            <span class="material-symbols-rounded text-primary-500">home_pin</span>
+                            <svg class="text-primary-500 w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M360-440h80v-110h80v110h80v-190l-120-80-120 80v190Zm120 254q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm-28 74q-14-5-25-15-65-60-115-117t-83.5-110.5q-33.5-53.5-51-103T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 45-17.5 94.5t-51 103Q698-301 648-244T533-127q-11 10-25 15t-28 5q-14 0-28-5Zm28-448Z" />
+                            </svg>
                             <span class="font-bold text-slate-700 text-sm">Blairsville is Home</span>
                         </div>
                         <div
                             class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-slate-100">
-                            <span class="material-symbols-rounded text-accent-yellow">auto_awesome</span>
+                            <svg class="text-accent-yellow w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="m706-706-70-32q-6-3-8.5-8t-2.5-10q0-5 2.5-10t8.5-8l70-32 32-70q3-6 8-9t10-3q5 0 10 3t8 9l32 70 70 32q6 3 9 8t3 10q0 5-3 10t-9 8l-70 32-32 70q-3 6-8 8.5t-10 2.5q-5 0-10-2.5t-8-8.5l-32-70ZM260-380l-160-73q-9-4-13-11.5T83-480q0-8 4-15.5t13-11.5l160-73 73-160q4-9 11.5-13t15.5-4q8 0 15.5 4t11.5 13l73 160 160 73q9 4 13 11.5t4 15.5q0 8-4 15.5T620-453l-160 73-73 160q-4 9-11.5 13t-15.5 4q-8 0-15.5-4T333-220l-73-160Zm100 26 40-86 86-40-86-40-40-86-40 86-86 40 86 40 40 86Zm350 204-70-32q-6-3-9-8t-3-10q0-5 3-10t9-8l70-32 32-70q3-6 8-9t10-3q5 0 10 3t8 9l32 70 70 32q6 3 9 8t3 10q0 5-3 10t-9 8l-70 32-32 70q-3 6-8 9t-10 3q-5 0-10-3t-8-9l-32-70ZM360-480Z" />
+                            </svg>
                             <span class="font-bold text-slate-700 text-sm">Glitter Queen</span>
                         </div>
                     </div>
@@ -674,7 +729,11 @@
 
         <div class="container mx-auto px-4 relative z-10 text-center">
             <div class="max-w-4xl mx-auto">
-                <span class="material-symbols-rounded text-6xl text-accent-yellow mb-6 block animate-bounce">star</span>
+                <svg class="text-6xl text-accent-yellow mb-6 block animate-bounce w-[1em] h-[1em] fill-current"
+                    xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path
+                        d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143Zm126 18L314-169q-11 7-23 6t-21-8q-9-7-14-17.5t-2-23.5l44-189-147-127q-10-9-12.5-20.5T140-571q4-11 12-18t22-9l194-17 75-178q5-12 15.5-18t21.5-6q11 0 21.5 6t15.5 18l75 178 194 17q14 2 22 9t12 18q4 11 1.5 22.5T809-528L662-401l44 189q3 13-2 23.5T690-171q-9 7-21 8t-23-6L480-269Zm0-201Z" />
+                </svg>
                 <h2 class="font-display font-bold text-4xl md:text-6xl text-white mb-8">
                     "The highlight of our daughter's birthday! <br /> Truly magical."
                 </h2>
@@ -711,11 +770,19 @@
                     <div class="flex gap-4">
                         <a href="#"
                             class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors">
-                            <span class="material-symbols-rounded">photo_camera</span> <!-- IG Placeholder -->
+                            <svg class="w-[1em] h-[1em] fill-current inline-block" xmlns="http://www.w3.org/2000/svg"
+                                height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M480-260q75 0 127.5-52.5T660-440q0-75-52.5-127.5T480-620q-75 0-127.5 52.5T300-440q0 75 52.5 127.5T480-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM160-120q-33 0-56.5-23.5T80-200v-480q0-33 23.5-56.5T160-760h126l50-54q11-12 26.5-19t32.5-7h170q17 0 32.5 7t26.5 19l50 54h126q33 0 56.5 23.5T880-680v480q0 33-23.5 56.5T800-120H160Zm0-80h640v-480H638l-73-80H395l-73 80H160v480Zm320-240Z" />
+                            </svg> <!-- IG Placeholder -->
                         </a>
                         <a href="#"
                             class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                            <span class="material-symbols-rounded">thumb_up</span> <!-- FB Placeholder -->
+                            <svg class="w-[1em] h-[1em] fill-current inline-block" xmlns="http://www.w3.org/2000/svg"
+                                height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M840-640q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14H280v-520l240-238q15-15 35.5-17.5T595-888q19 10 28 28t4 37l-45 183h258Zm-480 34v406h360l120-280v-80H480l54-220-174 174ZM160-120q-33 0-56.5-23.5T80-200v-360q0-33 23.5-56.5T160-640h120v80H160v360h120v80H160Zm200-80v-406 406Z" />
+                            </svg> <!-- FB Placeholder -->
                         </a>
                     </div>
                 </div>
@@ -752,16 +819,28 @@
                     <h4 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Contact Us</h4>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
-                            <span class="material-symbols-rounded text-primary-500 mt-1">call</span>
+                            <svg class="text-primary-500 mt-1 w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                            </svg>
                             <span>(123) 456-7890</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="material-symbols-rounded text-primary-500 mt-1">mail</span>
+                            <svg class="text-primary-500 mt-1 w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm640-480L501-453q-5 3-10.5 4.5T480-447q-5 0-10.5-1.5T459-453L160-640v400h640v-400ZM480-520l320-200H160l320 200ZM160-640v10-59 1-32 32-.5 58.5-10 400-400Z" />
+                            </svg>
                             <a href="mailto:hello@bloomandbrush.fun"
                                 class="hover:text-white transition-colors">hello@bloomandbrush.fun</a>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="material-symbols-rounded text-primary-500 mt-1">pin_drop</span>
+                            <svg class="text-primary-500 mt-1 w-[1em] h-[1em] fill-current inline-block"
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm-24 78q-12-4-22-12-118-94-176-183.5T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 86-58 175.5T526-235q-10 8-22 12t-24 4q-12 0-24-4Zm24-297q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM240-80q-17 0-28.5-11.5T200-120q0-17 11.5-28.5T240-160h480q17 0 28.5 11.5T760-120q0 17-11.5 28.5T720-80H240Zm240-520Z" />
+                            </svg>
                             <span>North Georgia & Tri-State Area</span>
                         </li>
                     </ul>
@@ -787,7 +866,11 @@
         <button
             class="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-[70] p-2 hover:bg-white/10 rounded-full"
             onclick="closeLightbox()">
-            <span class="material-symbols-rounded text-4xl">close</span>
+            <svg class="text-4xl w-[1em] h-[1em] fill-current inline-block" xmlns="http://www.w3.org/2000/svg"
+                height="24" viewBox="0 -960 960 960" width="24">
+                <path
+                    d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z" />
+            </svg>
         </button>
 
         <div class="relative max-w-7xl max-h-[90vh] w-full flex flex-col items-center justify-center p-2">
@@ -802,12 +885,20 @@
         <button id="prev-btn"
             class="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors z-[70] p-4 hover:bg-white/10 rounded-full"
             onclick="event.stopPropagation(); changeImage(-1)">
-            <span class="material-symbols-rounded text-5xl">chevron_left</span>
+            <svg class="text-5xl w-[1em] h-[1em] fill-current inline-block" xmlns="http://www.w3.org/2000/svg"
+                height="24" viewBox="0 -960 960 960" width="24">
+                <path
+                    d="m432-480 156 156q11 11 11 28t-11 28q-11 11-28 11t-28-11L348-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 28-11t28 11q11 11 11 28t-11 28L432-480Z" />
+            </svg>
         </button>
         <button id="next-btn"
             class="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors z-[70] p-4 hover:bg-white/10 rounded-full"
             onclick="event.stopPropagation(); changeImage(1)">
-            <span class="material-symbols-rounded text-5xl">chevron_right</span>
+            <svg class="text-5xl w-[1em] h-[1em] fill-current inline-block" xmlns="http://www.w3.org/2000/svg"
+                height="24" viewBox="0 -960 960 960" width="24">
+                <path
+                    d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z" />
+            </svg>
         </button>
     </div>
     </div>
@@ -820,11 +911,14 @@
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
-            const icon = btn.querySelector('span');
+            const menuIcon = document.getElementById('icon-menu');
+            const closeIcon = document.getElementById('icon-close');
             if (menu.classList.contains('hidden')) {
-                icon.textContent = 'menu';
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
             } else {
-                icon.textContent = 'close';
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
             }
         });
 
@@ -832,7 +926,8 @@
         menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
-                btn.querySelector('span').textContent = 'menu';
+                document.getElementById('icon-menu').classList.remove('hidden');
+                document.getElementById('icon-close').classList.add('hidden');
             });
         });
 
