@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+    /* Glassmorphism */
+    .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    }
+
+    /* Gradient Text */
+    .text-gradient {
+        background: linear-gradient(to right, #E91E63, #FFCA28, #42A5F5);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* blob background */
+    .blob {
+        position: absolute;
+        filter: blur(40px);
+        z-index: -1;
+        opacity: 0.4;
+    }
+}
