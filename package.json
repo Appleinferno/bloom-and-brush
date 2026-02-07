@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./assets/styles.css --minify",
+    "build": "npx tailwindcss -i ./src/input.css -o ./assets/styles.css --minify && node scripts/generate-sitemap.js",
     "watch": "npx tailwindcss -i ./src/input.css -o ./assets/styles.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
