@@ -6,7 +6,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 const OUTPUT_FILE = path.join(ROOT_DIR, 'sitemap.xml');
 
 // Files to exclude from sitemap
-const EXCLUDES = ['404.html', 'google', 'yandex']; // basic excludes
+const EXCLUDES = ['404.html', 'google', 'yandex', 'thank-you']; // basic excludes
 
 function getHtmlFiles(dir) {
     let results = [];
@@ -18,7 +18,7 @@ function getHtmlFiles(dir) {
 
         // Skip node_modules, .git, etc.
         if (stat.isDirectory()) {
-            if (file !== 'node_modules' && file !== '.git' && file !== '.agent' && file !== 'scripts' && file !== 'assets' && file !== 'src') {
+            if (file !== 'node_modules' && file !== '.git' && file !== '.agent' && file !== 'scripts' && file !== 'assets' && file !== 'src' && file !== 'thank-you') {
                 results = results.concat(getHtmlFiles(filePath));
             }
         } else {
@@ -43,11 +43,14 @@ function generateSitemap() {
     files.forEach(file => {
         // Convert file path to URL path
         // e.g., index.html -> /
-        // e.g., about.html -> /about.html
+        // e.g., about/index.html -> /about/
         let urlPath = file.replace(/\\/g, '/'); // Fix windows slashes
 
         if (urlPath === 'index.html') {
             urlPath = '';
+        } else if (urlPath.endsWith('/index.html')) {
+            // Convert directory/index.html to directory/
+            urlPath = urlPath.replace('/index.html', '/');
         }
 
         const loc = `${DOMAIN}/${urlPath}`;

@@ -20,12 +20,12 @@
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Preload Critical Fonts -->
-    <link rel="preload" href="assets/fonts/Fredoka-700.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="assets/fonts/Outfit-400.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="assets/fonts/Outfit-700.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../assets/fonts/Fredoka-700.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../assets/fonts/Outfit-400.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../assets/fonts/Outfit-700.ttf" as="font" type="font/ttf" crossorigin>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/bloom-and-brush-square-logo.png">
+    <link rel="icon" type="image/png" href="../images/bloom-and-brush-square-logo.png">
 
     <!-- Fonts -->
     <style>
@@ -35,7 +35,7 @@
             font-style: normal;
             font-weight: 400;
             font-display: swap;
-            src: url('assets/fonts/Fredoka-400.ttf') format('truetype');
+            src: url('../assets/fonts/Fredoka-400.ttf') format('truetype');
         }
 
         @font-face {
@@ -43,7 +43,7 @@
             font-style: normal;
             font-weight: 700;
             font-display: swap;
-            src: url('assets/fonts/Fredoka-700.ttf') format('truetype');
+            src: url('../assets/fonts/Fredoka-700.ttf') format('truetype');
         }
 
         /* Outfit */
@@ -52,7 +52,7 @@
             font-style: normal;
             font-weight: 400;
             font-display: swap;
-            src: url('assets/fonts/Outfit-400.ttf') format('truetype');
+            src: url('../assets/fonts/Outfit-400.ttf') format('truetype');
         }
 
         @font-face {
@@ -60,12 +60,12 @@
             font-style: normal;
             font-weight: 700;
             font-display: swap;
-            src: url('assets/fonts/Outfit-700.ttf') format('truetype');
+            src: url('../assets/fonts/Outfit-700.ttf') format('truetype');
         }
     </style>
 
     <!-- Tailwind CSS (Built) -->
-    <link href="assets/styles.css" rel="stylesheet">
+    <link href="../assets/styles.css" rel="stylesheet">
 </head>
 
 <body
@@ -77,8 +77,8 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-20">
                     <!-- Logo -->
-                    <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
-                        <img src="images/bloom-and-brush-square-logo.png" alt="Bloom & Brush Logo"
+                    <a href="/" class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                        <img src="../images/bloom-and-brush-square-logo.png" alt="Bloom & Brush Logo"
                             class="h-12 w-auto group-hover:scale-105 transition-transform duration-300">
                         <span
                             class="font-display font-bold text-xl md:text-2xl tracking-tight text-slate-800 group-hover:text-primary-600 transition-colors whitespace-nowrap">
@@ -88,15 +88,15 @@
 
                     <!-- Desktop Menu -->
                     <div class="hidden md:flex items-center space-x-8">
-                        <a href="index.html"
+                        <a href="/"
                             class="font-bold text-slate-600 hover:text-primary-600 transition-colors">Home</a>
-                        <a href="index.html#services"
+                        <a href="/#services"
                             class="font-bold text-slate-600 hover:text-primary-600 transition-colors">Services</a>
-                        <a href="index.html#gallery"
+                        <a href="/#gallery"
                             class="font-bold text-slate-600 hover:text-primary-600 transition-colors">Gallery</a>
-                        <a href="about.html"
+                        <a href="/about/"
                             class="font-bold text-slate-600 hover:text-primary-600 transition-colors">About</a>
-                        <a href="index.html#hero"
+                        <a href="/#hero"
                             class="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold shadow-lg shadow-primary-500/30 hover:-translate-y-0.5 transition-all duration-300">
                             Book Now
                         </a>
@@ -125,15 +125,15 @@
             <div id="mobile-menu"
                 class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 absolute w-full left-0 shadow-xl transition-all duration-300 origin-top">
                 <div class="px-4 pt-2 pb-6 space-y-2">
-                    <a href="index.html"
+                    <a href="/"
                         class="block px-3 py-3 rounded-xl text-base font-bold text-slate-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Home</a>
-                    <a href="index.html#services"
+                    <a href="/#services"
                         class="block px-3 py-3 rounded-xl text-base font-bold text-slate-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Services</a>
-                    <a href="index.html#gallery"
+                    <a href="/#gallery"
                         class="block px-3 py-3 rounded-xl text-base font-bold text-slate-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Gallery</a>
-                    <a href="about.html"
+                    <a href="/about/"
                         class="block px-3 py-3 rounded-xl text-base font-bold text-slate-700 hover:text-primary-600 hover:bg-primary-50 transition-all">About</a>
-                    <a href="index.html#hero"
+                    <a href="/#hero"
                         class="block px-3 py-3 mt-4 text-center rounded-xl text-base font-bold bg-primary-600 text-white shadow-lg shadow-primary-500/30">Book
                         Now</a>
                 </div>
@@ -181,11 +181,11 @@
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="index.html"
+                <a href="/"
                     class="px-10 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold text-lg shadow-lg shadow-primary-500/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
                     Back to Home
                 </a>
-                <a href="about.html"
+                <a href="/about/"
                     class="px-10 py-4 bg-white hover:bg-slate-50 text-slate-800 rounded-full font-bold text-lg shadow-lg border border-slate-200 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
                     Learn About Tiffany
                 </a>
@@ -232,7 +232,7 @@
                 <div class="col-span-1 md:col-span-2 lg:col-span-1">
                     <div class="flex items-center gap-2 mb-6 text-white">
                         <img loading="lazy"
-                            src="images/bloom%20and%20brush%20face%20painting%20by%20Tiiffany%20Dinehart%20Logo.png"
+                            src="../images/bloom%20and%20brush%20face%20painting%20by%20Tiiffany%20Dinehart%20Logo.png"
                             alt="Bloom & Brush Logo" class="h-10 w-auto">
                     </div>
                     <p class="text-slate-400 mb-6 leading-relaxed">
@@ -263,13 +263,13 @@
                 <div>
                     <h4 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Explore</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="hover:text-primary-400 transition-colors">Home</a></li>
-                        <li><a href="about.html" class="hover:text-primary-400 transition-colors">About Tiffany</a>
+                        <li><a href="/" class="hover:text-primary-400 transition-colors">Home</a></li>
+                        <li><a href="/about/" class="hover:text-primary-400 transition-colors">About Tiffany</a>
                         </li>
-                        <li><a href="index.html#services" class="hover:text-primary-400 transition-colors">Services &
+                        <li><a href="/#services" class="hover:text-primary-400 transition-colors">Services &
                                 Packages</a>
                         </li>
-                        <li><a href="index.html#gallery" class="hover:text-primary-400 transition-colors">Photo
+                        <li><a href="/#gallery" class="hover:text-primary-400 transition-colors">Photo
                                 Gallery</a></li>
                         <li><a href="#" class="hover:text-primary-400 transition-colors">FAQ</a></li>
                     </ul>
@@ -279,16 +279,16 @@
                 <div>
                     <h4 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html#services" class="hover:text-secondary-400 transition-colors">Birthday
+                        <li><a href="/#services" class="hover:text-secondary-400 transition-colors">Birthday
                                 Parties</a>
                         </li>
-                        <li><a href="index.html#services" class="hover:text-secondary-400 transition-colors">Corporate
+                        <li><a href="/#services" class="hover:text-secondary-400 transition-colors">Corporate
                                 Events</a>
                         </li>
-                        <li><a href="index.html#services" class="hover:text-secondary-400 transition-colors">Prenatal
+                        <li><a href="/#services" class="hover:text-secondary-400 transition-colors">Prenatal
                                 Painting</a>
                         </li>
-                        <li><a href="index.html#services"
+                        <li><a href="/#services"
                                 class="hover:text-secondary-400 transition-colors">Festivals</a></li>
                     </ul>
                 </div>

@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bloomandbrush.fun/about.html</loc>
-    <lastmod>2026-02-08T21:41:04.115Z</lastmod>
+    <loc>https://bloomandbrush.fun/about/</loc>
+    <lastmod>2026-02-08T22:04:22.758Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bloomandbrush.fun/</loc>
-    <lastmod>2026-02-08T21:41:04.115Z</lastmod>
+    <lastmod>2026-02-08T22:04:22.758Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://bloomandbrush.fun/thank-you.html</loc>
-    <lastmod>2026-02-08T21:41:04.115Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>
