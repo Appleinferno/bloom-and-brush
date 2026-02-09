@@ -2,14 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bloomandbrush.fun/about/</loc>
-    <lastmod>2026-02-08T22:04:22.758Z</lastmod>
+    <lastmod>2026-02-09T21:28:53.743Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloomandbrush.fun/birthday-party-face-painting/</loc>
+    <lastmod>2026-02-09T21:28:53.743Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloomandbrush.fun/community-event-face-painting/</loc>
+    <lastmod>2026-02-09T21:28:53.743Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloomandbrush.fun/corporate-event-face-painting/</loc>
+    <lastmod>2026-02-09T21:28:53.743Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloomandbrush.fun/face-painting-pricing/</loc>
+    <lastmod>2026-02-09T21:28:53.743Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bloomandbrush.fun/</loc>
-    <lastmod>2026-02-08T22:04:22.758Z</lastmod>
+    <lastmod>2026-02-09T21:28:53.743Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bloomandbrush.fun/north-georgia-face-painting/</loc>
+    <lastmod>2026-02-09T21:28:53.743Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloomandbrush.fun/southeast-tn-face-painting/</loc>
+    <lastmod>2026-02-09T21:28:53.743Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bloomandbrush.fun/western-nc-face-painting/</loc>
+    <lastmod>2026-02-09T21:28:53.743Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

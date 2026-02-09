@@ -653,6 +653,8 @@
                 });
 
                 if (res.ok) {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({ 'event': 'generate_lead' });
                     window.location.href = '/thank-you/';
                 } else {
                     btn.disabled = false;

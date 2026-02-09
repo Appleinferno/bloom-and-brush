@@ -1,6 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./index.html", "./about/index.html", "./thank-you/index.html"],
+    content: [
+        "./index.html",
+        "./about/index.html",
+        "./thank-you/index.html",
+        "./north-georgia-face-painting/index.html",
+        "./western-nc-face-painting/index.html",
+        "./southeast-tn-face-painting/index.html",
+        "./birthday-party-face-painting/index.html",
+        "./corporate-event-face-painting/index.html",
+        "./community-event-face-painting/index.html",
+        "./face-painting-pricing/index.html",
+    ],
     darkMode: 'class',
     theme: {
         extend: {
