@@ -3,6 +3,7 @@ module.exports = {
     content: [
         "./index.html",
         "./about/index.html",
+        "./contact/index.html",
         "./thank-you/index.html",
         "./north-georgia-face-painting/index.html",
         "./western-nc-face-painting/index.html",
@@ -11,6 +12,9 @@ module.exports = {
         "./corporate-event-face-painting/index.html",
         "./community-event-face-painting/index.html",
         "./face-painting-pricing/index.html",
+        "./face-painting-guides/index.html",
+        "./terms-of-service/index.html",
+        "./privacy-policy/index.html",
     ],
     darkMode: 'class',
     theme: {
