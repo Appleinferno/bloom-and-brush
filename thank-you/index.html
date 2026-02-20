@@ -107,7 +107,7 @@
 
                     <!-- Mobile Menu Button -->
                     <div class="md:hidden flex items-center">
-                        <button id="mobile-menu-btn"
+                        <button id="mobile-menu-btn" aria-label="Open navigation menu"
                             class="text-slate-600 hover:text-primary-600 focus:outline-none p-2 transition-transform active:scale-95">
                             <svg id="icon-menu" class="text-3xl w-[1em] h-[1em] fill-current inline-block"
                                 xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
@@ -245,12 +245,12 @@
                             class="font-sans font-bold text-xl text-white whitespace-nowrap group-hover:text-primary-400 transition-colors">Bloom<span
                                 class="text-accent-yellow">&amp;</span>Brush</span>
                     </a>
-                    <p class="text-slate-400 mb-6 leading-relaxed">
+                    <p class="text-slate-300 mb-6 leading-relaxed">
                         Bringing joy, color, and sparkle to North Georgia, Western NC, and Eastern TN. We create magical
                         memories one face at a time.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#"
+                        <a href="#" aria-label="Follow us on Instagram"
                             class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors">
                             <svg class="w-[1em] h-[1em] fill-current inline-block" xmlns="http://www.w3.org/2000/svg"
                                 height="24" viewBox="0 -960 960 960" width="24">
@@ -258,7 +258,7 @@
                                     d="M480-260q75 0 127.5-52.5T660-440q0-75-52.5-127.5T480-620q-75 0-127.5 52.5T300-440q0 75 52.5 127.5T480-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM160-120q-33 0-56.5-23.5T80-200v-480q0-33 23.5-56.5T160-760h126l50-54q11-12 26.5-19t32.5-7h170q17 0 32.5 7t26.5 19l50 54h126q33 0 56.5 23.5T880-680v480q0 33-23.5 56.5T800-120H160Zm0-80h640v-480H638l-73-80H395l-73 80H160v480Zm320-240Z" />
                             </svg>
                         </a>
-                        <a href="#"
+                        <a href="#" aria-label="Follow us on Facebook"
                             class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
                             <svg class="w-[1em] h-[1em] fill-current inline-block" xmlns="http://www.w3.org/2000/svg"
                                 height="24" viewBox="0 -960 960 960" width="24">
@@ -267,7 +267,7 @@
                             </svg>
                         </a>
                         <a href="https://www.pinterest.com/bloomandbrushfacepainting/" target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer" aria-label="Follow us on Pinterest"
                             class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors">
                             <svg class="w-[1em] h-[1em] fill-current inline-block" xmlns="http://www.w3.org/2000/svg"
                                 height="24" viewBox="0 -960 960 960" width="24">
@@ -280,12 +280,13 @@
 
                 <!-- Explore -->
                 <div>
-                    <h4 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Explore</h4>
+                    <h3 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Explore</h3>
                     <ul class="space-y-3">
                         <li><a href="/" class="hover:text-primary-400 transition-colors">Home</a></li>
                         <li><a href="/#gallery" class="hover:text-primary-400 transition-colors">Gallery</a></li>
                         <li><a href="/about/" class="hover:text-primary-400 transition-colors">About Tiffany</a></li>
-                        <li><a href="/face-painting-guides/" class="hover:text-primary-400 transition-colors">Guides</a></li>
+                        <li><a href="/face-painting-guides/" class="hover:text-primary-400 transition-colors">Guides</a>
+                        </li>
                         <li><a href="/face-painting-pricing/"
                                 class="hover:text-primary-400 transition-colors">Pricing</a></li>
                         <li><a href="/contact/" class="hover:text-primary-400 transition-colors">Contact</a></li>
@@ -294,7 +295,7 @@
 
                 <!-- Service Areas -->
                 <div>
-                    <h4 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Service Areas</h4>
+                    <h3 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Service Areas</h3>
                     <ul class="space-y-3">
                         <li><a href="/north-georgia-face-painting/"
                                 class="hover:text-secondary-400 transition-colors">North Georgia</a>
@@ -309,7 +310,7 @@
 
                 <!-- Events & Contact -->
                 <div>
-                    <h4 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Events</h4>
+                    <h3 class="text-white font-display font-bold text-lg mb-6 tracking-wide">Events</h3>
                     <ul class="space-y-3">
                         <li><a href="/birthday-party-face-painting/"
                                 class="hover:text-secondary-400 transition-colors">Kids Birthdays</a></li>
@@ -318,28 +319,22 @@
                         <li><a href="/community-event-face-painting/"
                                 class="hover:text-secondary-400 transition-colors">Schools &amp; Non-Profits</a></li>
                     </ul>
-                    <h4 class="text-white font-display font-bold text-lg mb-4 mt-8 tracking-wide">Contact</h4>
+                    <h3 class="text-white font-display font-bold text-lg mb-4 mt-8 tracking-wide">Contact</h3>
                     <a href="mailto:tiffany@bloomandbrush.fun"
                         class="hover:text-white transition-colors">tiffany@bloomandbrush.fun</a>
                     <br>
-                    <a href="tel:+17063630238"
-                        class="hover:text-white transition-colors">(706) 363-0238</a>
+                    <a href="tel:+17063630238" class="hover:text-white transition-colors">(706) 363-0238</a>
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+            <div class="pt-8 border-t border-slate-800 text-center text-sm text-slate-400">
                 <p>&copy; 2026 Bloom & Brush Face Painting. All rights reserved.</p>
                 <p class="mt-2">
                     <a href="/terms-of-service/" class="hover:text-primary-400 transition-colors">Terms of Service</a>
                     <span class="mx-2">|</span>
                     <a href="/privacy-policy/" class="hover:text-primary-400 transition-colors">Privacy Policy</a>
                 </p>
-                <div class="mt-2 space-x-4">
-                    <div class="mt-2 space-x-4">
-                        <a href="#" class="hover:text-slate-300">Privacy Policy</a>
-                        <a href="#" class="hover:text-slate-300">Terms of Service</a>
-                    </div>
-                </div>
+
             </div>
     </footer>
 
