@@ -13,6 +13,8 @@ module.exports = {
         "./community-event-face-painting/index.html",
         "./face-painting-pricing/index.html",
         "./face-painting-guides/index.html",
+        "./face-painting-guides/safety/index.html",
+        "./face-painting-guides/safety/how-long-does-facepaint-last/index.html",
         "./terms-of-service/index.html",
         "./privacy-policy/index.html",
     ],
