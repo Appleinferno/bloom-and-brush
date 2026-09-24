@@ -1,12 +1,11 @@
 {
   "name": "bloom-dev",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Fast static lead-generation site for Bloom & Brush Face Painting.",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./assets/styles.css --minify && node scripts/generate-sitemap.js",
-    "watch": "npx tailwindcss -i ./src/input.css -o ./assets/styles.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/generate-sitemap.js && npm run check",
+    "check": "node scripts/check-site.js",
+    "test": "npm run check"
   },
   "repository": {
     "type": "git",
@@ -19,13 +18,5 @@
   "bugs": {
     "url": "https://github.com/AppleInferno/bloom-and-brush/issues"
   },
-  "homepage": "https://github.com/AppleInferno/bloom-and-brush#readme",
-  "devDependencies": {
-    "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/typography": "^0.5.19",
-    "autoprefixer": "^10.4.24",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17"
-  }
+  "homepage": "https://github.com/AppleInferno/bloom-and-brush#readme"
 }

@@ -17,39 +17,11 @@
         content="Privacy Policy for Bloom & Brush Face Painting. Learn how we collect, use, and protect your personal information.">
     <meta property="og:image"
         content="https://bloomandbrush.fun/images/bloom%20and%20brush%20face%20painting%20image%20of%20multiple%20children%20wearing%20Tiffanys%20latest%20original%20face%20designs%20for%20open%20graph.jpeg">
-    <link rel="preload" href="../assets/fonts/Fredoka-700.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="../assets/fonts/Outfit-400.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="../assets/fonts/Outfit-700.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../assets/fonts/Fredoka-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/Outfit-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/Outfit-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" type="image/webp" href="../images/bloom%20and%20brush%20square%20logo.webp">
-    <style>
-        @font-face {
-            font-family: 'Fredoka';
-            font-weight: 400;
-            font-display: swap;
-            src: url('../assets/fonts/Fredoka-400.ttf') format('truetype');
-        }
 
-        @font-face {
-            font-family: 'Fredoka';
-            font-weight: 700;
-            font-display: swap;
-            src: url('../assets/fonts/Fredoka-700.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'Outfit';
-            font-weight: 400;
-            font-display: swap;
-            src: url('../assets/fonts/Outfit-400.ttf') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'Outfit';
-            font-weight: 700;
-            font-display: swap;
-            src: url('../assets/fonts/Outfit-700.ttf') format('truetype');
-        }
-    </style>
     <link href="../assets/styles.css" rel="stylesheet">
 </head>
 
@@ -60,16 +32,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="/" class="flex items-center gap-2">
-                    <img src="../images/bloom%20and%20brush%20square%20logo.webp" alt="Bloom &amp; Brush Logo"
+                    <img width="100" height="100" src="../images/bloom%20and%20brush%20square%20logo.webp" alt="Bloom &amp; Brush Logo"
                         class="h-10 w-auto">
                     <span class="font-sans font-bold text-xl text-slate-800 whitespace-nowrap">Bloom<span
                             class="text-accent-yellow">&amp;</span>Brush</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-6">
-                    <div class="relative group">
-                        <span class="font-sans font-bold text-slate-600 hover:text-primary-600 cursor-pointer">Service
-                            Areas</span>
-                        <div class="hidden group-hover:block absolute top-full left-0 pt-1 z-50">
+                    <div class="relative group" data-dropdown>
+                        <button type="button" data-dropdown-button aria-expanded="false" aria-haspopup="true" class="font-sans font-bold text-slate-600 hover:text-primary-600 cursor-pointer">Service Areas</button>
+                        <div data-dropdown-menu class="hidden group-hover:block group-focus-within:block absolute top-full left-0 pt-1 z-50">
                             <div class="bg-white border border-slate-200 shadow-sm rounded-md py-1 min-w-[180px]">
                                 <a href="/north-georgia-face-painting/"
                                     class="block px-4 py-2 font-sans font-normal text-slate-700 hover:bg-slate-50 hover:text-primary-600">North
@@ -83,10 +54,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative group">
-                        <span
-                            class="font-sans font-bold text-slate-600 hover:text-primary-600 cursor-pointer">Events</span>
-                        <div class="hidden group-hover:block absolute top-full left-0 pt-1 z-50">
+                    <div class="relative group" data-dropdown>
+                        <button type="button" data-dropdown-button aria-expanded="false" aria-haspopup="true" class="font-sans font-bold text-slate-600 hover:text-primary-600 cursor-pointer">Events</button>
+                        <div data-dropdown-menu class="hidden group-hover:block group-focus-within:block absolute top-full left-0 pt-1 z-50">
                             <div class="bg-white border border-slate-200 shadow-sm rounded-md py-1 min-w-[200px]">
                                 <a href="/birthday-party-face-painting/"
                                     class="block px-4 py-2 font-sans font-normal text-slate-700 hover:bg-slate-50 hover:text-primary-600">Kids
@@ -111,7 +81,7 @@
                         class="px-5 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-sans font-bold">Book
                         Now</a>
                 </div>
-                <button id="mobile-menu-btn" aria-label="Open navigation menu"
+                <button id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"
                     class="md:hidden text-slate-600 hover:text-primary-600 focus:outline-none p-2">
                     <svg id="icon-menu" class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 -960 960 960">
@@ -166,7 +136,7 @@
         </div>
     </nav>
 
-    <main class="pt-28 pb-20">
+    <main id="main-content" class="pt-28 pb-20">
         <article class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto">
                 <h1 class="font-display font-bold text-4xl md:text-5xl text-slate-800 mb-8">Privacy Policy</h1>
@@ -347,7 +317,7 @@
                 <!-- Brand -->
                 <div class="col-span-1 md:col-span-2 lg:col-span-1">
                     <a href="/" class="flex items-center gap-2 mb-6 group">
-                        <img loading="lazy" src="../images/bloom%20and%20brush%20square%20logo.webp"
+                        <img width="100" height="100" loading="lazy" src="../images/bloom%20and%20brush%20square%20logo.webp"
                             alt="Bloom & Brush Logo"
                             class="h-10 w-auto group-hover:scale-105 transition-transform duration-300">
                         <span
@@ -435,11 +405,8 @@
         </div>
     </footer>
 
-    <script>
-        const btn = document.getElementById('mobile-menu-btn'), menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); document.getElementById('icon-menu').classList.toggle('hidden'); document.getElementById('icon-close').classList.toggle('hidden'); });
-        menu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { menu.classList.add('hidden'); document.getElementById('icon-menu').classList.remove('hidden'); document.getElementById('icon-close').classList.add('hidden'); }));
-    </script>
+
+    <script src="/assets/site.js" defer></script>
 </body>
 
 </html>
