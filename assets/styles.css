@@ -6,8 +6,17 @@
 
 /* Mobile service-card overlap */
 .service-card-icon{margin:-2rem 0 1rem 1rem;box-shadow:0 0 0 4px #fff,0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
+.service-card-icon-purple{background:#e1bee7;color:#8e24aa}
+.service-card-icon-blue{background:#bbdefb;color:#1e88e5}
 .service-card-description{margin-bottom:0}
 @media (min-width:768px){.service-card-icon{margin:0 0 1.5rem;box-shadow:none}.service-card-description{margin-bottom:1.5rem}}
+
+/* Shared navigation breakpoint */
+.site-desktop-nav{display:none}
+.site-mobile-nav-toggle{display:flex}
+.site-mobile-nav-panel{display:none}
+.site-mobile-nav-panel:not(.hidden){display:block}
+@media (min-width:1024px){.site-desktop-nav{display:flex}.site-mobile-nav-toggle,.site-mobile-nav-panel{display:none!important}}
 .process-section{position:relative;overflow:hidden;padding:6rem 1rem;background:linear-gradient(180deg,#fff 0%,#fff8fc 100%)}
 .process-section:before,.process-section:after{content:"";position:absolute;border-radius:999px;filter:blur(1px);pointer-events:none}
 .process-section:before{width:20rem;height:20rem;top:-10rem;left:-8rem;background:rgba(233,30,99,.08)}
