@@ -46,8 +46,18 @@ for (const file of htmlFiles) {
     if (!/<main(?:\s|>)/i.test(html)) report(warnings, file, 'missing main landmark');
     if (/@font-face/i.test(html)) report(errors, file, 'contains inline font declarations; fonts belong in compiled CSS');
     if (/href="#"/i.test(html)) report(warnings, file, 'contains a placeholder href="#" link');
+    if (file !== path.join(ROOT, 'index.html') && /href="\/#hero"/i.test(html)) {
+        report(errors, file, 'booking links must target /#booking-form instead of the top of the homepage');
+    }
     if (/id="mobile-menu-btn"/i.test(html) && !/id="mobile-menu-btn"[^>]+aria-expanded=/is.test(html)) {
         report(errors, file, 'mobile menu button is missing aria-expanded');
+    }
+    if (/action="https:\/\/formspree\.io/i.test(html)) {
+        if (!/name="_gotcha"/i.test(html)) report(errors, file, 'Formspree form is missing its honeypot field');
+        if (!/assets\/site\.js/i.test(html)) report(errors, file, 'Formspree form is missing shared submission handling');
+        if (!/(?:does\s+not\s+reserve|reserved\s+(?:only\s+)?after)/i.test(html)) {
+            report(errors, file, 'booking form is missing the reservation-timing clarification');
+        }
     }
 
     const ids = [...html.matchAll(/\sid="([^"]+)"/gi)].map((match) => match[1]);
